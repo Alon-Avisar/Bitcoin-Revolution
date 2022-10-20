@@ -1,0 +1,15 @@
+@import "./base.css";
+
+#app {
+  margin: 0 auto;
+
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: rgb(70, 62, 62);
+  transition: 0.4s;
+  color: rgb(180, 179, 179);
+}
+
