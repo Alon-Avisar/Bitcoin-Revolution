@@ -7,11 +7,12 @@
       <button>Login</button>
       <div class="msg">{{msg}}</div>
     </form>
-    <!-- <router-link to="/signup">Signup</router-link> -->
+
   </div>
 </template>
 
 <script>
+import { storageService } from '../services/storage.service.js'
 
 export default {
   created() {
@@ -27,9 +28,14 @@ export default {
   },
   methods: {
     async onLogin() {
-      if (!this.cred.email || !this.cred.password) return
-      await this.$store.dispatch({ type: 'login', cred: this.cred });
-      if (this.$store.getters.loggedInUser) this.$router.push("/")
+      console.log('this.$store.users:', this.cred)
+
+      if (!this.cred.email || !this.cred.password)
+        await this.$store.dispatch({ type: 'login', cred: this.cred });
+      if (this.$store.getters.loggedInUser) {
+
+        this.$router.push("/");
+      }
       else {
         this.msg = 'Wrong username and password. Please try again'
         setTimeout(() => { this.msg = '' }, 5000)
@@ -53,10 +59,11 @@ export default {
   align-items: center;
   top: 30px;
 
-  h1{
+  h1 {
     margin: auto;
   }
-  form{
+
+  form {
     display: flex;
     flex-direction: column;
     gap: 27px;

@@ -41,12 +41,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .img-section{
        display: flex;
         align-items: center;
         justify-content: center;
-        top: 25px;
+        top: 55px;
     img{
         width: 400px;
    
@@ -56,7 +56,7 @@ export default {
     background: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 150px;
 
     div {
         width: 800px;

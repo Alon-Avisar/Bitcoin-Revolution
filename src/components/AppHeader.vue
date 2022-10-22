@@ -5,6 +5,7 @@
 
         <nav>
             <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/transfer">Transfer</RouterLink>
             <RouterLink to="/about">About</RouterLink>
             <RouterLink to="/contact">Contacts</RouterLink>
             <RouterLink to="/stats">Statistics</RouterLink>

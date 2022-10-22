@@ -37,9 +37,8 @@ export default {
     },
     computed:{
         contactsTohow(){
-            return this.contacts
-            //  const regex = new RegExp(this.filterBy.name , 'i')
-            //  return this.contacts.filter(contact => regex.test(contact.name))
+            const regex = new RegExp(this.filterBy.name , 'i')
+            return this.contacts.filter(contact => regex.test(contact.name))
         },
         contacts(){
             return this.$store.getters.contacts
@@ -47,6 +46,8 @@ export default {
        
     },
       async created(){
+        this.$store.dispatch({type:'loadLoggedInUser'})
+
         this.$store.dispatch({type: 'loadContacts', })
 
         

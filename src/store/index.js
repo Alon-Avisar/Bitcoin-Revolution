@@ -1,6 +1,7 @@
 
 import { createStore } from "vuex"
 import contact from './modules/contact.js'
+import {userService} from '../services/userService.js'
 
 
 const storeOption = {
@@ -11,16 +12,16 @@ const storeOption = {
       }
     },
     mutations: {
-      increment (state) {
-        state.count++
-      }
+      setUser(state, payload) {
+        state.user = payload.loggedInUser;
+      },
     },
     modules:{
       contact,
     },
     actions:{
       async login(context, { cred }) {
-        const loggedInUser = await userService.login(cred);
+        const loggedInUser = await userService.getUser();
         context.commit({ type: 'setUser', loggedInUser });
       },
     }

@@ -1,8 +1,11 @@
 <template>
 
     <section class="contact-filter">
-        
         <input @input="onFilter" v-model="filterBy.name" type="text" placeholder="Search contact">
+        <button>
+            <RouterLink to="contact/edit">Add a Contact</RouterLink>
+            
+        </button>
     </section>
 </template>
     
@@ -14,9 +17,9 @@ export default {
             filterBy: { name: '' }
         }
     },
-    methods:{
+    methods: {
         onFilter() {
-        this.$emit('filter' , this.filterBy)            
+            this.$emit('filter', this.filterBy)
         }
     }
 
@@ -30,10 +33,19 @@ h1 {
 
 .contact-filter {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
     top: 35px;
+    z-index: 1;
+    gap: 20px;
+
+    button {
+        font-size: 20px;
+        border-radius: 5px;
+        margin-right: 00px;
+    }
 
     input {
         display: flex;
@@ -44,5 +56,6 @@ h1 {
 
     }
 }
+
 </style>
     

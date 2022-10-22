@@ -18,6 +18,7 @@
 <script >
 import { userService } from '../services/userService.js'
 import { bitcoinService } from '../services/bitcoinService.js'
+import {storageService} from '../services/storage.service.js'
 
 
 
@@ -30,13 +31,13 @@ export default {
         }
     },
     async created() {
-        this.user = await userService.getUser()
-        console.log('this.user:', this.user)
-
-
         this.rate = await bitcoinService.getRate()
         console.log('this.rate:', this.rate)
 
+        this.user = await userService.getUser()
+        storageService.save('loggedInUser ' ,this.user)
+        console.log('this.user:', this.user)
+ 
     },
 
 

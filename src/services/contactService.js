@@ -14,23 +14,21 @@ const contacts = [
         "name": "Ochoa Hyde",
         "email": "ochoahyde@renovize.com",
         "phone": "+1 (968) 593-3824",
-        "img": "https://robohash.org/YOUR-TEXT.png",
-
+        "balance": 250,
     },
     {
         "_id": "5a5664025f6ae9aa24a99fde",
         "name": "Hallie Mclean",
         "email": "halliemclean@renovize.com",
         "phone": "+1 (948) 464-2888",
-        "img": "https://robohash.org/YOUR-TEXT.png",
-
+        "balance": 250,
     },
     {
         "_id": "5a56640252d6acddd183d319",
         "name": "Parsons Norris",
         "email": "parsonsnorris@renovize.com",
         "phone": "+1 (958) 502-3495",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
 
     },
     {
@@ -38,7 +36,7 @@ const contacts = [
         "name": "Rachel Lowe",
         "email": "rachellowe@renovize.com",
         "phone": "+1 (911) 475-2312",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
 
     },
     {
@@ -46,7 +44,7 @@ const contacts = [
         "name": "Dominique Soto",
         "email": "dominiquesoto@renovize.com",
         "phone": "+1 (807) 551-3258",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
 
     },
     {
@@ -54,7 +52,7 @@ const contacts = [
         "name": "Shana Pope",
         "email": "shanapope@renovize.com",
         "phone": "+1 (970) 527-3082",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
 
     },
     {
@@ -62,48 +60,64 @@ const contacts = [
         "name": "Faulkner Flores",
         "email": "faulknerflores@renovize.com",
         "phone": "+1 (952) 501-2678",
+        "balance": 250,
+
     },
     {
         "_id": "5a5664027bae84ef280ffbdf",
         "name": "Holder Bean",
         "email": "holderbean@renovize.com",
-        "phone": "+1 (989) 503-2663"
+        "phone": "+1 (989) 503-2663",
+        "balance": 250,
+
     },
     {
         "_id": "5a566402e3b846c5f6aec652",
         "name": "Rosanne Shelton",
         "email": "rosanneshelton@renovize.com",
         "phone": "+1 (968) 454-3851",
+        "balance": 250,
+
     },
     {
         "_id": "5a56640272c7dcdf59c3d411",
         "name": "Pamela Nolan",
         "email": "pamelanolan@renovize.com",
         "phone": "+1 (986) 545-2166",
+        "balance": 250,
+
     },
     {
         "_id": "5a5664029a8dd82a6178b15f",
         "name": "Roy Cantu",
         "email": "roycantu@renovize.com",
         "phone": "+1 (929) 571-2295",
+        "balance": 250,
+
     },
     {
         "_id": "5a5664028c096d08eeb13a8a",
         "name": "Ollie Christian",
         "email": "olliechristian@renovize.com",
         "phone": "+1 (977) 419-3550",
+        "balance": 250,
+
     },
     {
         "_id": "5a5664026c53582bb9ebe9d1",
         "name": "Nguyen Walls",
         "email": "nguyenwalls@renovize.com",
         "phone": "+1 (963) 471-3181",
+        "balance": 250,
+
     },
     {
         "_id": "5a56640298ab77236845b82b",
         "name": "Glenna Santana",
         "email": "glennasantana@renovize.com",
         "phone": "+1 (860) 467-2376",
+        "balance": 250,
+
     },
     {
         "_id": "5a56640208fba3e8ecb97305",
@@ -115,20 +129,25 @@ const contacts = [
         "_id": "5a566402abb3146207bc4ec5",
         "name": "Floyd Rutledge",
         "email": "floydrutledge@renovize.com",
-        "phone": "+1 (807) 597-3629"
+        "phone": "+1 (807) 597-3629",
+        "balance": 250,
+
     },
     {
         "_id": "5a56640298500fead8cb1ee5",
         "name": "Grace James",
         "email": "gracejames@renovize.com",
         "phone": "+1 (959) 525-2529",
+        "balance": 250,
+
     },
     {
         "_id": "5a56640243427b8f8445231e",
         "name": "Tanner Gates",
         "email": "tannergates@renovize.com",
         "phone": "+1 (978) 591-2291",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
+
 
     },
     {
@@ -136,14 +155,18 @@ const contacts = [
         "name": "Lilly Conner",
         "email": "lillyconner@renovize.com",
         "phone": "+1 (842) 587-3812",
-        "img": "https://robohash.org/YOUR-TEXT.png",
+        "balance": 250,
+
     }
 ];
+
+
+
+
 
 function getRobohash (){
     axios.get('https://robohash.org/set_set3/bgset_bg1/3.14159?size=500x500')
    .then(resp => {
-      console.log('resp.dafffta:' , resp.data)
       
    })
    .catch(err => {
@@ -212,7 +235,8 @@ function _addContact(contact) {
 }
 
 function saveContact(contact) {
-    return contact._id ? _updateContact(contact) : _addContact(contact)
+    if(contact._id) return _updateContact(contact)
+    else return _addContact(contact)
 }
 
 function getEmptyContact() {

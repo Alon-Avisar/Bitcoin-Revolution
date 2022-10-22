@@ -16,9 +16,7 @@
                             <RouterLink :to="`/contact/edit/${contact._id}`"> Edit</RouterLink>
                         </button>
 
-                        <button>
-                            <RouterLink to="contact/edit">Add a Contact</RouterLink>
-                        </button>
+                       
                         <button class="delete" @click="onDeleteContact(contact._id)">x</button>
 
                     </section>
@@ -59,11 +57,12 @@ export default {
 <style lang="scss">
 .contact-list ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 70px;
     height: 1000px;
     gap: 10px;
     list-style-type: none;
+
 
 
 
@@ -87,6 +86,7 @@ export default {
         justify-content: center;
         margin-block-start: 1em;
         gap: 10px;
+
 
     }
 

@@ -1,12 +1,14 @@
 import {contactService} from '../../services/contactService.js'
+import {userService} from '../../services/userService.js'
+import {storageService} from '../../services/storage.service'
+
 
 
 export default {
     state:{
         contact:[]
-
-        
     },
+
     // must be synchronous can't be async !!
     mutations:{
         setContacts(state ,{contacts}){
@@ -42,11 +44,22 @@ export default {
         async saveContact({commit} , {contact}){
             await contactService.saveContact(contact)    
             commit({type:'saveContact' , contact})
-        }
+        },
+        async login(context, { cred }) {
+            const loggedInUser = await userService.login(cred);
+            console.log(':loggedInUser' , loggedInUser)
+            
+            storageService.save()
+            context.commit({ type: 'setUser', loggedInUser });
+        },
+
     },
     getters:{
         contacts(state){
             return state.contacts
-        }
+        },
+            loggedInUser(state) {
+              return state.user;
+         },
     }
 }
