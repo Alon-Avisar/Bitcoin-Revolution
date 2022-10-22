@@ -42,8 +42,6 @@ export default {
     computed: {
         getImgUrl() {
             return `https://joeschmoe.io/api/v1/${this.contact._id}mail@ashallendesign.co.uk`
-
-
         },
     },
 
