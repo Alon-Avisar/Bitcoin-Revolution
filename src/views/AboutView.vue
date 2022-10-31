@@ -5,9 +5,6 @@
     <div class="about">
       <h1> " By far the best digital wallet app for keeping and transfering Bitcoins " </h1>
     </div>
-    <div class="client-name">
-      <h1>Puki Ja.</h1>
-    </div>
   </div>
   <div class="about-img">
     <!-- <img   src="../assets/about.jpg" alt=""> -->

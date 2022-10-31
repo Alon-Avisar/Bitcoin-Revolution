@@ -4,7 +4,6 @@ import {utilService} from "./util.service"
 export const userService = {
     getUser,
     login,
-    // transferFunds,
     // getTransactions,
 }
 
@@ -14,7 +13,7 @@ const users = {
     _id: utilService.makeId(),
     email: 'admin@admin.com',
     password: '1234',
-    name: 'Admin',
+    name: 'Alon',
     balance: 1230,
     isAdmin: true,
     transactions: [
@@ -56,10 +55,4 @@ function login(cred) {
 }
 
 
-async function transferFund(amount, to) {
-    const loggedInUser = getUser();
-    if (loggedInUser.balance < amount || amount <= 0) throw 'Amount is invalid'
-    to.balance += amount
 
-
-}

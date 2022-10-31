@@ -5,11 +5,9 @@
 
         <nav>
             <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/transfer">Transfer</RouterLink>
             <RouterLink to="/about">About</RouterLink>
             <RouterLink to="/contact">Contacts</RouterLink>
             <RouterLink to="/stats">Statistics</RouterLink>
-            <RouterLink to="/login">Login</RouterLink>
         </nav>
     </header>
 </template>
@@ -63,7 +61,7 @@ export default {
     padding: 20px;
     padding-inline: 73px;
     box-shadow: 1px -4px 50px -15px rgba(0, 0, 0, 0.76);
-    max-width: 1750px;
+    // max-width: 1750px;
     min-width:700px;
     border-bottom: 1px solid rgba(248, 240, 240, 0.101);
 

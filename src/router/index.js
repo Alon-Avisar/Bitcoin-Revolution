@@ -4,8 +4,6 @@ import BitcoinApp from '../views/BitcoinApp.vue'
 import ContactDetails from '../views/ContactDetails.vue'
 import ContactEdit from '../views/ContactEdit.vue'
 import Charts from '../views/Charts.vue'
-import Login from '../views/Login.vue'
-import Transfer from '../views/Transfer.vue'
 
 
 
@@ -16,16 +14,6 @@ const routerOptions = {
       {
         path: '/',
         component: HomeView,
-      },
-      {
-        path: '/login',
-        name: 'Login',
-        component: Login
-      },
-      {
-        path: '/transfer',
-        name: 'Transfer',
-        component: Transfer
       },
       {
         path: '/contact',

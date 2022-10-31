@@ -19,7 +19,6 @@ export default {
 
 <style lang="scss">
 .main-container{
-  max-width: 1750px;
 background-color: black;
   
 }

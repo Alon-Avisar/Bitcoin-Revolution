@@ -59,7 +59,7 @@ export default {
         margin-right: 40px;
 
         min-width: 1500px;
-        max-width: 1500px;
+        // max-width: 1500px;
         white-space: 0px;
         align-content: flex-start;
         flex-direction: column;
