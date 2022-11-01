@@ -3,8 +3,7 @@
     <section class="contact-filter">
         <input @input="onFilter" v-model="filterBy.name" type="text" placeholder="Search contact">
         <button>
-            <RouterLink to="contact/edit">Add a Contact</RouterLink>
-            
+            <RouterLink to="contact/edit"></RouterLink>Add a Contact  
         </button>
     </section>
 </template>
