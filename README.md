@@ -45,7 +45,7 @@ Open http://localhost:3000 to view it in the browser.
 ## Showcase
 
 ### Dashboard
-Here I present a chart about the BTC-USD pair over the years ! ( not financial advice : Dont forget to buy the deep 🤓 )
+Here I present a chart about the BTC-USD pair over the years ! (not financial advice : Dont forget to buy the deep 🤓)
 
 ![Dashboard image](https://user-images.githubusercontent.com/109606770/199218715-748d0d0c-9802-4a7e-bdf3-f20ceda198a1.png)
 
